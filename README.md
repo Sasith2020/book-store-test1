@@ -1,6 +1,6 @@
 # VerseReads
 
-This repository contains a minimal Django project skeleton for the VerseReads eBook bookstore. The UI uses Tailwind CSS and HTMX with a responsive navbar, landing page and login page.
+This repository contains a minimal Django project skeleton for the VerseReads eBook bookstore. The UI uses Tailwind CSS and HTMX with Inter fonts and a responsive navbar, landing page and authentication pages.
 
 ## Development
 
@@ -15,4 +15,4 @@ This repository contains a minimal Django project skeleton for the VerseReads eB
    python manage.py runserver
    ```
 
-Visit `http://localhost:8000/` to see the landing page.
+Visit `http://localhost:8000/` to see the landing page. Access the login page at `/accounts/login/` and the signup page at `/accounts/signup/`.

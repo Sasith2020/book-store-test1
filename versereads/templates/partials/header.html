@@ -1,31 +1,30 @@
-<header class="fixed top-0 left-0 right-0 bg-white/70 dark:bg-gray-800/70 backdrop-blur z-50" x-data="{open:false, dark:false}">
+<header class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur shadow-sm z-50" x-data="{open:false, dark:false}">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <a href="/" class="text-xl font-bold text-blue-600">VerseReads</a>
             </div>
             <div class="hidden md:flex space-x-4">
-                <a href="#" class="hover:text-blue-600">Explore Books</a>
-                <a href="#" class="hover:text-blue-600">Authors</a>
-                <a href="#" class="hover:text-blue-600">Genres</a>
-                <a href="#" class="hover:text-blue-600">Languages</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Explore Books</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Authors</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Genres</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Languages</a>
             </div>
             <div class="flex items-center space-x-2">
-                <button @click="dark=!dark" class="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                <button @click="dark=!dark" class="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                     <span x-show="!dark">🌙</span>
                     <span x-show="dark">☀️</span>
                 </button>
-                <a href="/accounts/login/" class="px-3 py-1 rounded hover:bg-blue-600 hover:text-white">Login</a>
-                <a href="/accounts/signup/" class="px-3 py-1 rounded hover:bg-blue-600 hover:text-white">Signup</a>
+                <a href="{% url 'login' %}" class="px-3 py-1 rounded hover:bg-blue-600 hover:text-white transition-colors border border-transparent">Login</a>
                 <button class="md:hidden p-2" @click="open=!open">☰</button>
             </div>
         </div>
         <div class="md:hidden" x-show="open" @click.away="open=false">
             <div class="flex flex-col space-y-2 py-2">
-                <a href="#" class="hover:text-blue-600">Explore Books</a>
-                <a href="#" class="hover:text-blue-600">Authors</a>
-                <a href="#" class="hover:text-blue-600">Genres</a>
-                <a href="#" class="hover:text-blue-600">Languages</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Explore Books</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Authors</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Genres</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Languages</a>
             </div>
         </div>
     </nav>
