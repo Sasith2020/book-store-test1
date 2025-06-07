@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-200 to-blue-400 dark:from-gray-700 dark:to-gray-900">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded shadow-md w-full max-w-md fade-in">
+        <h2 class="text-2xl font-bold mb-2 text-center">Welcome Back to VerseReads</h2>
+        <p class="mb-4 text-center">Log in to read your library or manage your books</p>
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            <div class="relative">
+                <input type="email" name="username" required class="peer w-full border rounded px-3 py-2 bg-transparent placeholder-transparent focus:outline-none" placeholder="Email address">
+                <label class="absolute left-3 top-2 text-gray-500 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm transition-all">Email address</label>
+            </div>
+            <div class="relative">
+                <input type="password" name="password" required class="peer w-full border rounded px-3 py-2 bg-transparent placeholder-transparent focus:outline-none" placeholder="Password">
+                <label class="absolute left-3 top-2 text-gray-500 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm transition-all">Password</label>
+            </div>
+            <div class="flex items-center justify-between">
+                <label><input type="checkbox" name="remember"> Remember Me</label>
+                <a href="#" class="text-sm text-blue-600">Forgot Password?</a>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700 transition-colors">Log In</button>
+        </form>
+        <div class="my-4 text-center text-sm text-gray-500">Or continue with</div>
+        <div class="flex space-x-2">
+            <button class="flex-1 border rounded py-2 hover:bg-gray-100 flex items-center justify-center space-x-2">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="h-5" alt="Google">
+                <span>Continue with Google</span>
+            </button>
+            <button class="flex-1 border rounded py-2 hover:bg-gray-100 flex items-center justify-center space-x-2">
+                <img src="https://www.svgrepo.com/show/452274/apple.svg" class="h-5" alt="Apple">
+                <span>Continue with Apple</span>
+            </button>
+        </div>
+        <p class="mt-4 text-center text-sm">New to VerseReads? <a href="{% url 'signup' %}" class="text-blue-600">Sign Up</a></p>
+    </div>
+</div>
+{% endblock %}

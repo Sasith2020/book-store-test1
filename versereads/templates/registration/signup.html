@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-200 to-blue-400 dark:from-gray-700 dark:to-gray-900">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded shadow-md w-full max-w-md fade-in">
+        <h2 class="text-2xl font-bold mb-2 text-center">Create your VerseReads account</h2>
+        <p class="mb-4 text-center">Sign up to start exploring books</p>
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            <div class="relative">
+                <input type="text" name="username" required class="peer w-full border rounded px-3 py-2 bg-transparent placeholder-transparent focus:outline-none" placeholder="Email address">
+                <label class="absolute left-3 top-2 text-gray-500 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm transition-all">Email address</label>
+            </div>
+            <div class="relative">
+                <input type="password" name="password1" required class="peer w-full border rounded px-3 py-2 bg-transparent placeholder-transparent focus:outline-none" placeholder="Password">
+                <label class="absolute left-3 top-2 text-gray-500 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm transition-all">Password</label>
+            </div>
+            <div class="relative">
+                <input type="password" name="password2" required class="peer w-full border rounded px-3 py-2 bg-transparent placeholder-transparent focus:outline-none" placeholder="Confirm Password">
+                <label class="absolute left-3 top-2 text-gray-500 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm transition-all">Confirm Password</label>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700 transition-colors">Sign Up</button>
+        </form>
+        <p class="mt-4 text-center text-sm">Already have an account? <a href="{% url 'login' %}" class="text-blue-600">Log In</a></p>
+    </div>
+</div>
+{% endblock %}
