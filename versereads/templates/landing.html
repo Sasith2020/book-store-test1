@@ -8,4 +8,107 @@
         <a href="#" class="px-6 py-3 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition-colors">Become an Author</a>
     </div>
 </section>
+
+<!-- Features Grid -->
+<section class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div class="text-center fade-in">
+            <div class="text-4xl mb-2">📖</div>
+            <h3 class="font-semibold mb-1">Per-chapter or full-book</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Flexible purchasing options for every reader.</p>
+        </div>
+        <div class="text-center fade-in">
+            <div class="text-4xl mb-2">🌍</div>
+            <h3 class="font-semibold mb-1">Multilingual pricing</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Set prices for each language you support.</p>
+        </div>
+        <div class="text-center fade-in">
+            <div class="text-4xl mb-2">🎧</div>
+            <h3 class="font-semibold mb-1">AI narration</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Auto-generated summaries and audiobooks.</p>
+        </div>
+        <div class="text-center fade-in">
+            <div class="text-4xl mb-2">⭐</div>
+            <h3 class="font-semibold mb-1">Personalized picks</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Recommendations tailored to your tastes.</p>
+        </div>
+        <div class="text-center fade-in">
+            <div class="text-4xl mb-2">📈</div>
+            <h3 class="font-semibold mb-1">Author dashboard</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Upload, manage and view analytics in one place.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Books Carousel -->
+<section class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4 text-center">Featured Books</h2>
+        <div class="flex space-x-4 overflow-x-auto pb-4" id="carousel">
+            {% for i in "12345" %}
+            <div class="relative min-w-[150px] bg-white dark:bg-gray-700 rounded shadow fade-in">
+                <img src="https://via.placeholder.com/150x220" alt="Book cover" class="rounded-t">
+                <div class="p-2 text-sm">
+                    <p class="font-semibold">Book {{ i }}</p>
+                    <span class="text-xs bg-blue-600 text-white px-2 py-0.5 rounded">EN</span>
+                </div>
+                <a href="#" class="absolute inset-0 flex items-center justify-center bg-black/60 text-white opacity-0 hover:opacity-100 transition-opacity">View Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Author CTA -->
+<section class="py-16 bg-white dark:bg-gray-900 text-center fade-in">
+    <h2 class="text-3xl font-bold mb-4">Authors, reach a global audience in your native tongue</h2>
+    <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">Start Selling</a>
+</section>
+
+<!-- Testimonials -->
+<section class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded shadow fade-in text-center">
+            <img src="https://via.placeholder.com/64" class="mx-auto rounded-full mb-2" alt="User">
+            <p class="italic mb-2">“VerseReads helped me publish my stories to readers around the world.”</p>
+            <p class="font-semibold">— Alex, Author</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded shadow fade-in text-center">
+            <img src="https://via.placeholder.com/64" class="mx-auto rounded-full mb-2" alt="User">
+            <p class="italic mb-2">“The AI narration is so lifelike. I listen on my commute!”</p>
+            <p class="font-semibold">— Jamie, Reader</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded shadow fade-in text-center">
+            <img src="https://via.placeholder.com/64" class="mx-auto rounded-full mb-2" alt="User">
+            <p class="italic mb-2">“I love switching languages to compare translations.”</p>
+            <p class="font-semibold">— Priya, Polyglot</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-8 dark:bg-black">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-4">
+        <div class="flex space-x-4 justify-center md:justify-start">
+            <a href="#" class="hover:underline">About</a>
+            <a href="#" class="hover:underline">Contact</a>
+            <a href="#" class="hover:underline">Terms</a>
+            <a href="#" class="hover:underline">Privacy</a>
+        </div>
+        <div class="flex items-center justify-center md:justify-end space-x-4">
+            <select class="bg-gray-800 text-gray-300 border-gray-700 rounded px-2 py-1 text-sm">
+                <option>EN</option>
+                <option>ES</option>
+                <option>FR</option>
+            </select>
+            <div class="space-x-3">
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📸</a>
+                <a href="#" aria-label="LinkedIn">💼</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 {% endblock %}

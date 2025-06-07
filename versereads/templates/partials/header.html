@@ -11,15 +11,21 @@
                 <a href="#" class="hover:text-blue-600 transition-colors">Languages</a>
             </div>
             <div class="flex items-center space-x-2">
-                <button @click="dark=!dark" class="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                    <span x-show="!dark">🌙</span>
-                    <span x-show="dark">☀️</span>
+                <select class="border rounded px-2 py-1 text-sm hidden sm:block">
+                    <option>EN</option>
+                    <option>ES</option>
+                    <option>FR</option>
+                </select>
+                <button onclick="toggleDarkMode()" class="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle dark mode">
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
                 </button>
                 <a href="{% url 'login' %}" class="px-3 py-1 rounded hover:bg-blue-600 hover:text-white transition-colors border border-transparent">Login</a>
-                <button class="md:hidden p-2" @click="open=!open">☰</button>
+                <a href="{% url 'signup' %}" class="px-3 py-1 rounded border border-blue-600 text-blue-600 hover:bg-blue-50 transition-colors">Sign Up</a>
+                <button class="md:hidden p-2" onclick="toggleMenu()">☰</button>
             </div>
         </div>
-        <div class="md:hidden" x-show="open" @click.away="open=false">
+        <div class="md:hidden hidden" id="mobile-menu">
             <div class="flex flex-col space-y-2 py-2">
                 <a href="#" class="hover:text-blue-600 transition-colors">Explore Books</a>
                 <a href="#" class="hover:text-blue-600 transition-colors">Authors</a>
